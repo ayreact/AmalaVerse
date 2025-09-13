@@ -13,7 +13,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 
 // Mapbox access token - IMPORTANT: Use environment variables in production!
 // Example: process.env.NEXT_PUBLIC_MAPBOX_TOKEN
-const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN; // Replace with your actual token or env var
+const MAPBOX_TOKEN = import.meta.env.VITE_MAPBOX_TOKEN;
 
 // Helper function to generate Mapbox popup HTML
 const mapSpotToHTML = (spot: AmalaSpot) => `

@@ -14,7 +14,7 @@ import {
 // Configuration
 const getApiBaseUrl = () => {
   try {
-    const url = localStorage.getItem('api_base_url') || '';
+    const url = import.meta.env.VITE_API_BASE_URL;
     return url.replace(/\/$/, '');
   } catch {
     return '';
