@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* AmalaVerse Design System - Modern Liquid Glass Design */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    /* Modern Glass Color Palette */
+    --background: 220 15% 98%;
+    --foreground: 220 10% 10%;
+
+    --card: 220 10% 99%;
+    --card-foreground: 220 10% 10%;
+
+    --popover: 220 10% 99%;
+    --popover-foreground: 220 10% 10%;
+
+    /* Primary - Electric Blue */
+    --primary: 217 91% 60%;
+    --primary-foreground: 220 10% 99%;
+    --primary-hover: 217 91% 55%;
+    --primary-light: 217 91% 85%;
+    
+    /* Secondary - Purple Gradient */
+    --secondary: 262 83% 58%;
+    --secondary-foreground: 220 10% 99%;
+    --secondary-hover: 262 83% 53%;
+    --secondary-light: 262 83% 85%;
+
+    /* Accent - Cyan */
+    --accent: 189 94% 60%;
+    --accent-foreground: 220 10% 10%;
+    --accent-hover: 189 94% 55%;
+    --accent-light: 189 94% 85%;
+
+    /* Muted - Glass Neutral */
+    --muted: 220 8% 94%;
+    --muted-foreground: 220 8% 45%;
+
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 220 10% 99%;
+
+    --border: 220 13% 88%;
+    --input: 220 13% 88%;
+    --ring: 217 91% 60%;
+
+    --radius: 1rem;
+
+    /* Liquid Glass Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(262 83% 65%));
+    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    --gradient-backdrop: linear-gradient(135deg, hsl(220 15% 98% / 0.8), hsl(220 15% 96% / 0.6));
+    
+    /* Glass Effects */
+    --glass-bg: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    --glass-backdrop: blur(16px);
+
+    /* Enhanced Shadows */
+    --shadow-glass: 0 8px 32px rgba(31, 38, 135, 0.15);
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.25);
+    --shadow-elegant: 0 20px 60px -10px hsl(var(--secondary) / 0.25);
+
+    /* Smooth Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-glass: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .dark {
+    --background: 220 27% 8%;
+    --foreground: 220 10% 95%;
+
+    --card: 220 27% 10%;
+    --card-foreground: 220 10% 95%;
+
+    --popover: 220 27% 10%;
+    --popover-foreground: 220 10% 95%;
+
+    --primary: 217 91% 65%;
+    --primary-foreground: 220 27% 8%;
+    --primary-hover: 217 91% 70%;
+    --primary-light: 217 50% 20%;
+
+    --secondary: 262 83% 63%;
+    --secondary-foreground: 220 27% 8%;
+    --secondary-hover: 262 83% 68%;
+    --secondary-light: 262 50% 20%;
+
+    --accent: 189 94% 65%;
+    --accent-foreground: 220 27% 8%;
+    --accent-hover: 189 94% 70%;
+    --accent-light: 189 50% 20%;
+
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 10% 60%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 220 10% 95%;
+
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 217 91% 65%;
+
+    /* Dark Glass Effects */
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --gradient-backdrop: linear-gradient(135deg, hsl(220 27% 8% / 0.8), hsl(220 27% 6% / 0.6));
+
+    /* Dark gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(262 83% 70%));
+    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+  }
+}
+
+@layer utilities {
+  .transition-glass {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+
+  /* Glass Morphism Utilities */
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-backdrop);
+    -webkit-backdrop-filter: var(--glass-backdrop);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+
+  .glass-card {
+    @apply glass rounded-2xl;
+  }
+
+  .glass-button {
+    @apply glass rounded-xl transition-glass hover:bg-white/20 dark:hover:bg-white/10;
+  }
+
+  .line-clamp-1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
